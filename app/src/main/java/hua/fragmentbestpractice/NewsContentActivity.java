@@ -28,7 +28,7 @@ public class NewsContentActivity extends Activity {
         String newsContent = getIntent().getStringExtra("news_content");
 
         NewsContentFragment newsContentFragment=(NewsContentFragment)
-                getFragmentManager().findFragmentById(R.id.news_content);
+                getFragmentManager().findFragmentById(R.id.news_content_fragment);
         newsContentFragment.refresh(newsTitle, newsContent);
 
     }

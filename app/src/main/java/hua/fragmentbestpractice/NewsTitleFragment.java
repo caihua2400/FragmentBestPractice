@@ -26,8 +26,8 @@ public class NewsTitleFragment extends Fragment implements OnItemClickListener {
     private boolean isTwoPane;
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
         newsList = getNews();
         adapter= new NewsAdapter(getActivity(), R.layout.news_item, newsList);
     }
