@@ -30,15 +30,20 @@ public class NewsTitleFragment extends Fragment implements OnItemClickListener {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         newsList = getNews();
+        try{
+            mcallBack=(CallBack) activity;
+
+        }catch (ClassCastException e){
+            throw new ClassCastException(activity.toString()
+                    + " must implement CallBack");
+        }
         adapter= new NewsAdapter(getActivity(), R.layout.news_item, newsList);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (getActivity().findViewById(R.id.news_content_layout) != null) {
-            isTwoPane = true;  } else {
-            isTwoPane = false;  }
+
 
         }
 
@@ -56,16 +61,8 @@ public class NewsTitleFragment extends Fragment implements OnItemClickListener {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         News news = newsList.get(position);
-        if (isTwoPane) {
-// 如果是双页模式,则刷新NewsContentFragment中的内容
-        NewsContentFragment newsContentFragment = (NewsContentFragment)
-            getFragmentManager().findFragmentById(R.id.news_content_fragment);
-            newsContentFragment.refresh(news.getTitle(), news.getContent());
-        } else {
-// 如果是单页模式,则直接启动NewsContentActivity
-      NewsContentActivity.actionStart(getActivity(), news.getTitle(),
-                    news.getContent());
-        }
+        mcallBack.OnItemSelected(news);
+
 
     }
     public interface CallBack{

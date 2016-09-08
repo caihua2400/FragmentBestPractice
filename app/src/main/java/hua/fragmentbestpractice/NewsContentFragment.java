@@ -1,6 +1,6 @@
 package hua.fragmentbestpractice;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 /**
  * Created by caihua2300 on 02/09/2016.
  */
-public class NewsContentFragment extends Fragment {
+public class NewsContentFragment extends android.support.v4.app.Fragment {
     private View view;
     @Nullable
     @Override
