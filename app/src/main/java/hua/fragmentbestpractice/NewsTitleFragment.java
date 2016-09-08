@@ -24,6 +24,7 @@ public class NewsTitleFragment extends Fragment implements OnItemClickListener {
     private List<News> newsList;
     private NewsAdapter adapter;
     private boolean isTwoPane;
+    private CallBack mcallBack;
 
     @Override
     public void onAttach(Activity activity) {
@@ -63,8 +64,14 @@ public class NewsTitleFragment extends Fragment implements OnItemClickListener {
         } else {
 // 如果是单页模式,则直接启动NewsContentActivity
       NewsContentActivity.actionStart(getActivity(), news.getTitle(),
-            news.getContent());
+                    news.getContent());
         }
+
+    }
+    public interface CallBack{
+
+        public void OnItemSelected(News news);
+
 
     }
     private List<News> getNews() {
