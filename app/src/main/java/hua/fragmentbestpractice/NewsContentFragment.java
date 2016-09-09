@@ -20,8 +20,8 @@ public class NewsContentFragment extends android.support.v4.app.Fragment {
         return view;
     }
     public void refresh(String newsTitle, String newsContent){
-         View view1=view.findViewById(R.id.visibility_layout);
-         view1.setVisibility(View.VISIBLE);
+        View view1=view.findViewById(R.id.visibility_layout);
+        view1.setVisibility(View.VISIBLE);
         TextView newsTitleText = (TextView) view.findViewById (R.id.news_title);
         TextView newsContentText = (TextView) view.findViewById(R.id.news_content);
         newsTitleText.setText(newsTitle); // 刷新新闻的标题 newsContentText.setText(newsContent); // 刷新新闻的内容

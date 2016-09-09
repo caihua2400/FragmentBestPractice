@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements NewsTitleFragment
             args.putSerializable("news",news);
             NewsContentFragment newsContentFragment=new NewsContentFragment();
             newsContentFragment.setArguments(args);
-            getSupportFragmentManager().beginTransaction().replace(R.id.news_content_fragment,newsContentFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.news_content_layout,newsContentFragment).commit();
             //newsContentFragment.refresh(news.getTitle(), news.getContent());
 
         }else{
