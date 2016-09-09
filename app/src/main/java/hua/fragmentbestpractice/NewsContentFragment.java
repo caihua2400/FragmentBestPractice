@@ -19,6 +19,9 @@ public class NewsContentFragment extends android.support.v4.app.Fragment {
         view=inflater.inflate(R.layout.news_content_frag,container,false);
         return view;
     }
+
+
+
     public void refresh(String newsTitle, String newsContent){
         View view1=view.findViewById(R.id.visibility_layout);
         view1.setVisibility(View.VISIBLE);
