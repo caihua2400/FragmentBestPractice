@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements NewsTitleFragment
             NewsContentFragment newsContentFragment=new NewsContentFragment();
             newsContentFragment.setArguments(args);
             getSupportFragmentManager().beginTransaction().replace(R.id.news_content_fragment,newsContentFragment).commit();
-            newsContentFragment.refresh(news.getTitle(), news.getContent());
+            //newsContentFragment.refresh(news.getTitle(), news.getContent());
 
         }else{
             NewsContentActivity.actionStart(this, news.getTitle(),
