@@ -1,5 +1,6 @@
 package hua.fragmentbestpractice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -31,8 +32,13 @@ public class MainActivity extends AppCompatActivity implements NewsTitleFragment
             //newsContentFragment.refresh(news.getTitle(), news.getContent());
 
         }else{
-            NewsContentActivity.actionStart(this, news.getTitle(),
-                    news.getContent());
+            //because we are in a one pane mode, we need to turn to the next activity and transfer the content.
+
+            Intent intent = new Intent(this, NewsContentActivity.class);
+
+            intent.putExtra("news",news);
+
+            startActivity(intent);
         }
     }
 }
