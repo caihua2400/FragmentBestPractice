@@ -17,6 +17,7 @@ public class NewsContentFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.news_content_frag,container,false);
+
         News news=(News) getArguments().getSerializable("news");
         View view1=view.findViewById(R.id.visibility_layout);
         view1.setVisibility(View.VISIBLE);

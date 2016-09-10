@@ -23,10 +23,11 @@ public class NewsContentActivity extends AppCompatActivity {
         News news=(News) getIntent().getSerializableExtra("news");
         Bundle bundle=new Bundle();
         bundle.putSerializable("news",news);
-        NewsContentFragment newsContentFragment=(NewsContentFragment) getSupportFragmentManager().findFragmentById(R.id.news_content_fragment);
+        //NewsContentFragment newsContentFragment=(NewsContentFragment) getSupportFragmentManager().findFragmentById(R.id.news_content_fragment);
+        //newsContentFragment.setArguments(bundle);
+        NewsContentFragment newsContentFragment=new NewsContentFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_container,newsContentFragment).commit();
         newsContentFragment.setArguments(bundle);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.news_content_layout,newsContentFragment).commit();
-
         //NewsContentFragment newsContentFragment=(NewsContentFragment) getSupportFragmentManager().findFragmentById(R.id.news_content_fragment);
         //newsContentFragment.refresh(newsTitle, newsContent);
 
